@@ -272,17 +272,96 @@
     .info-table td:first-child { font-weight: 600; color: var(--text-main); width: 115px; }
     .info-table td:nth-child(2) { width: 20px; color: var(--gold); font-weight: 700; }
 
-    .video-intro-title { color: var(--gold); font-weight: 700; font-size: 28px; margin-bottom: 8px; }
-    .video-intro-subtitle { font-weight: 600; color: var(--text-main); font-size: 20px; margin-bottom: 12px; }
-    .video-intro-text { color: var(--text-muted); max-width: 720px; margin: 0 auto 35px auto; font-size: 14.5px; }
+
+/* ================= VIDEO SECTION ================= */
+
+.video-intro-title {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.video-intro-subtitle {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.video-intro-text {
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 0 auto 35px;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* Video card */
+.video-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Vertical video container */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: #000;
+}
+
+/* Video */
+.video-container video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
+}
+
+/* Caption */
+.video-caption {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: var(--text-dim);
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
     .video-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+        padding: 15px;
     }
-    .video-caption { text-align: center; margin-top: 16px; margin-bottom: 0; color: var(--text-dim); font-size: 13.5px; font-style: italic; }
+
+    .video-intro-title {
+        font-size: 25px;
+    }
+
+    .video-intro-subtitle {
+        font-size: 18px;
+    }
+
+    .video-intro-text {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+}
+
 
     .sub-heading { font-weight: 700; font-size: 23px; color: var(--text-main); margin-bottom: 26px; display: flex; align-items: center; gap: 10px; }
     .sub-heading i { color: var(--gold); }
@@ -497,47 +576,56 @@
     </div>
   </section>
 
-  <!-- ================= VIDEO SECTION ================= -->
-  <section id="video">
-    <div class="container">
-      <div class="section-title-wrapper">
-        <span class="section-watermark">GET TO KNOW ME</span>
-        <h2 class="section-title">ABOUT MYSELF</h2>
-      </div>
 
-      <div class="text-center">
-        <h3 class="video-intro-title">Hello!</h3>
-        <h4 class="video-intro-subtitle">This is my story, my passions and my goals</h4>
-        <p class="video-intro-text">
-          Get to know more about who I am, what inspires me, and the experiences and ambitions that guide my personal and professional journey.
-        </p>
-      </div>
+
+<!-- ================= VIDEO SECTION ================= -->
+<section id="video">
+  <div class="container">
+
+    <div class="section-title-wrapper">
+      <span class="section-watermark">GET TO KNOW ME</span>
+      <h2 class="section-title">ABOUT MYSELF</h2>
+    </div>
+
+    <div class="text-center">
+      <h3 class="video-intro-title">Hello!</h3>
+
+      <h4 class="video-intro-subtitle">
+        This is my story, my passions and my goals
+      </h4>
+
+      <p class="video-intro-text">
+        Get to know more about who I am, what inspires me, and the
+        experiences and ambitions that guide my personal and
+        professional journey.
+      </p>
+    </div>
 
     <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <div class="video-box text-center">
-          
-          <div class="ratio ratio-9x16 rounded overflow-hidden shadow-lg mx-auto"
-              style="max-width: 340px; border: 1px solid var(--border-subtle);">
-            
-            <video 
-              controls
-              playsinline
-              preload="metadata"
-              style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="MY_LIFE.mp4" type="video/mp4">
-              Tu navegador no soporta videos HTML5.
-            </video>
+      <div class="col-lg-6 col-md-8 col-sm-10">
 
+        <div class="video-box text-center">
+
+          <div class="video-container mx-auto">
+            <video controls preload="metadata" playsinline>
+              <source src="./MY_LIFE.mp4" type="video/mp4">
+              Tu navegador no soporta videos HTML5 o no pudo encontrar el archivo MY_LIFE.mp4.
+            </video>
           </div>
 
-          <p class="video-caption mt-3">
+          <p class="video-caption">
             A journey of learning, leadership, creativity, music, and technology.
           </p>
+
         </div>
+
       </div>
     </div>
+
+  </div>
 </section>
+
+
 
   <!-- ================= SKILLS & RESUME SECTION ================= -->
   <section id="resume">
